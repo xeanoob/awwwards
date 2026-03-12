@@ -19,15 +19,8 @@ function Particles() {
 
   useFrame((state, delta) => {
     if (pointsRef.current) {
-        const time = state.clock.elapsedTime;
-        // Simulated global audio bounce
-        const bounce = Math.sin(time * 8.0) * 0.5 + 0.5;
-        
         pointsRef.current.rotation.y += delta * 0.05;
         pointsRef.current.rotation.x += delta * 0.02;
-
-        const scale = 1.0 + Math.pow(bounce, 4) * 0.2;
-        pointsRef.current.scale.set(scale, scale, scale);
     }
   });
 

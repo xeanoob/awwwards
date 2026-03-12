@@ -2,12 +2,14 @@ import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Philosophy from './components/Philosophy';
 import Expertise from './components/Expertise';
-import WorkGrid from './components/WorkGrid';
-import FirstPersonMuseum from './components/FirstPersonMuseum';
+import SelectedClients from './components/SelectedClients';
 import Marquee from './components/Marquee';
-import Footer from './components/Footer';
 import StickyStacking from './components/StickyStacking';
 import BehindTheScenesGallery from './components/BehindTheScenesGallery';
+import WebglCarousel from './components/WebglCarousel';
+import StickyMaskReveal from './components/StickyMaskReveal';
+import Awards from './components/Awards';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -15,10 +17,13 @@ export default function Home() {
       <Nav />
       <Hero />
       <Philosophy />
+      <StickyMaskReveal />
       <Expertise />
+      <SelectedClients />
+      <WebglCarousel />
+      <Awards />
       <Marquee />
       <StickyStacking />
-      <WorkGrid />
       <BehindTheScenesGallery />
       <Footer />
     </main>

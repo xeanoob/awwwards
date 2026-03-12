@@ -5,6 +5,7 @@ import { useRef, useState, useMemo, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text, useVideoTexture, Environment } from '@react-three/drei';
 import { useSound } from './SoundProvider';
+import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
   { id: 1, title: 'Lumina', client: 'Fashion House', videoUrl: '/videos/video1.mp4' },
@@ -48,7 +49,7 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         position={[0, 0, 0]}
       >
         <planeGeometry args={[4.8, 2.7]} />
-        <meshBasicMaterial map={texture} toneMapped={false} color={hovered ? "#ffffff" : "#666666"} />
+        <DistortionMaterial texture={texture} hovered={hovered} />
       </mesh>
       
       {/* Project Title */}
@@ -107,7 +108,7 @@ function Ring({ velocityRef, onProjectClick }: any) {
             index={i} 
             total={projects.length} 
             radius={radius} 
-            onClick={() => onProjectClick(project.id)}
+            onClick={() => onProjectClick ? onProjectClick(project.id) : null}
         />
       ))}
     </group>
@@ -120,7 +121,7 @@ function PostProcessingEffect({ velocityRef }: any) {
     return null;
 }
 
-export default function WebglCarousel({ onProjectClick }: { onProjectClick: () => void }) {
+export default function WebglCarousel({ onProjectClick }: { onProjectClick?: (id?: number) => void }) {
   const velocityRef = useRef(0);
   const isDragging = useRef(false);
   const prevX = useRef(0);

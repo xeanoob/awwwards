@@ -15,14 +15,12 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-end p-8 pb-20 bg-black">
-      {/* Background Video with Parallax & Slow Zoom */}
+      {/* Background Video with Parallax (No Zooming) */}
       <motion.div 
         style={{ y: backgroundY }} 
-        className="absolute inset-x-0 -top-[20%] h-[140%] z-0 bg-black"
+        className="absolute inset-0 z-0 bg-black"
       >
-        <motion.video
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        <video
           autoPlay
           loop
           muted
@@ -47,7 +45,7 @@ export default function Hero() {
             <span className="italic">Elevated.</span>
           </h1>
           <p className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-white/70">
-            A boutique production agency.
+            Manipulating perception since 1820.
           </p>
         </motion.div>
 

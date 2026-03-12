@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="max-w-xl">
           <h2 className="font-serif text-4xl md:text-5xl tracking-tighter mb-4 italic">Let's create.</h2>
           <p className="font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-60">
-            Elevating visual narratives.
+            Bend time with us.
           </p>
         </div>
         <div className="hidden md:flex flex-col items-end gap-2 text-[10px] uppercase tracking-widest font-sans font-medium">

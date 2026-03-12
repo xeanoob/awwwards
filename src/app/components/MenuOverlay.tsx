@@ -2,12 +2,15 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import Link from 'next/link';
 import { useSound } from './SoundProvider';
 
 const links = [
-  { name: 'WORK', href: '#', img: '/images/about.jpg' },
-  { name: 'STUDIO', href: '#', img: '/videos/video3.mp4', isVideo: true },
-  { name: 'CONTACT', href: '#', img: '/videos/video2.mp4', isVideo: true },
+  { name: 'HOME', href: '/', img: '/videos/video1.mp4', isVideo: true },
+  { name: 'WORK', href: '/work', img: '/images/gallery1.jpg' },
+  { name: 'STUDIO', href: '/studio', img: '/videos/video3.mp4', isVideo: true },
+  { name: 'ABOUT', href: '/about', img: '/images/about.jpg' },
+  { name: 'CONTACT', href: '/contact', img: '/videos/video2.mp4', isVideo: true },
 ];
 
 export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, toggleMenu: () => void }) {
@@ -67,18 +70,19 @@ export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, t
                 onMouseEnter={() => { setHoveredLink(i); playClick(); }} 
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                <motion.a
-                  href={link.href}
-                  variants={linkVariants}
-                  className="block font-serif text-[12vw] md:text-[8vw] leading-[0.85] tracking-tighter text-white hover:italic transition-all duration-500"
-                  style={{  
-                    WebkitTextStroke: hoveredLink === i ? 'none' : '1px rgba(255,255,255,0.3)',
-                    color: hoveredLink === i ? 'white' : 'transparent',
-                  }}
-                  onClick={() => { playClick(); toggleMenu(); }}
-                >
-                  {link.name}
-                </motion.a>
+                <Link href={link.href} passHref legacyBehavior>
+                  <motion.a
+                    variants={linkVariants}
+                    className="block font-serif text-[12vw] md:text-[8vw] leading-[0.85] tracking-tighter text-white hover:italic transition-all duration-500 cursor-pointer"
+                    style={{  
+                      WebkitTextStroke: hoveredLink === i ? 'none' : '1px rgba(255,255,255,0.3)',
+                      color: hoveredLink === i ? 'white' : 'transparent',
+                    }}
+                    onClick={() => { playClick(); toggleMenu(); }}
+                  >
+                    {link.name}
+                  </motion.a>
+                </Link>
               </div>
             ))}
           </nav>

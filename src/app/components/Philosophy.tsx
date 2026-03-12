@@ -7,7 +7,7 @@ export default function Philosophy() {
         <h2 className="font-serif text-5xl md:text-[8vw] leading-[1.0] tracking-tighter text-white/90">
           Digital Art.
           <br />
-          <span className="italic">Visceral Motion.</span>
+          <span className="italic">The Illusion of Time.</span>
         </h2>
       </div>
     </section>
