@@ -2,45 +2,31 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSound } from './SoundProvider';
-
-const cutWords = ["MOTION", "VISION", "ELEVATED", "1820"];
 
 export default function Preloader() {
   const [progress, setProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [cutIndex, setCutIndex] = useState(-1);
-  const { playHeartbeat } = useSound();
 
   useEffect(() => {
+    // Elegant, slow loading progression
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          // Start the Cut Sequence
-          let cIndex = 0;
-          playHeartbeat(); // First beat
-          
-          const cutInterval = setInterval(() => {
-            setCutIndex(cIndex);
-            cIndex++;
-            if (cIndex % 2 === 0 && cIndex < cutWords.length) {
-                playHeartbeat(); // Beat on specific words
-            }
-            if (cIndex > cutWords.length) {
-              clearInterval(cutInterval);
-              setTimeout(() => setIsLoading(false), 400); // Wait longer before completely fading out
-            }
-          }, 350); // Increased from 150 to 350 so the user can read the words
-          
+          setTimeout(() => setIsLoading(false), 800); // Linger on 100%
           return 100;
         }
-        return prev + Math.floor(Math.random() * 8) + 1; // Slower progress increments
+        
+        // Non-linear easing for the counter
+        const increment = prev < 80 ? Math.random() * 2 + 0.5 : Math.random() * 0.5 + 0.1;
+        return Math.min(prev + increment, 100);
       });
-    }, 120); // Slower global polling from 80 to 120
+    }, 40);
 
     return () => clearInterval(interval);
   }, []);
+
+  const formattedProgress = progress.toFixed(0).padStart(3, '0');
 
   return (
     <AnimatePresence>
@@ -48,35 +34,55 @@ export default function Preloader() {
         <motion.div
           key="preloader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }} // Cinematic blur exit
-          transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center pointer-events-none"
+          exit={{ y: "-100%", opacity: 0 }}
+          transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[100] bg-[#050505] flex flex-col items-center justify-between pointer-events-none p-12 md:p-16"
         >
-          {cutIndex === -1 ? (
-            <>
-              {/* Normal Loading State */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
-                <motion.div
-                  initial={{ y: '100%' }}
-                  animate={{ y: '0%' }}
-                  transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                  className="font-serif text-6xl md:text-[8vw] leading-none text-white tracking-tighter"
-                >
-                  1820
-                </motion.div>
-              </div>
-              <div className="absolute bottom-16 right-16 font-sans text-xs uppercase tracking-[0.3em] text-white">
-                {progress}%
-              </div>
-            </>
-          ) : (
-            // The Cut Sequence
-            <div className="absolute inset-0 bg-white flex items-center justify-center mix-blend-difference">
-              <h1 className="font-serif text-[15vw] leading-none text-black tracking-tighter uppercase italic">
-                {cutWords[cutIndex]}
-              </h1>
-            </div>
-          )}
+            
+          <div className="w-full flex justify-between font-sans text-[10px] md:text-sm uppercase tracking-[0.3em] text-[#A0A0A0]">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              1820 Studios
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              Paris — London
+            </motion.div>
+          </div>
+
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex flex-col items-center">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+                className="font-serif text-[15vw] md:text-[12vw] leading-none text-white tracking-tighter"
+            >
+              {formattedProgress}
+            </motion.div>
+          </div>
+
+          <div className="w-full flex justify-between font-sans text-[10px] uppercase tracking-[0.3em] text-[#A0A0A0] items-end">
+             <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.8 }}
+            >
+              Loading Experience
+            </motion.div>
+            <motion.div
+              initial={{ width: "0%" }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.1 }}
+              className="h-[1px] bg-white absolute bottom-16 left-16 right-16 origin-left mix-blend-difference"
+            />
+          </div>
+
         </motion.div>
       )}
     </AnimatePresence>

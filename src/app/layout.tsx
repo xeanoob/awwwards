@@ -8,6 +8,8 @@ import GrainOverlay from './components/GrainOverlay';
 import SmoothScroll from './components/SmoothScroll';
 import { SoundProvider } from './components/SoundProvider';
 import SoundToggle from './components/SoundToggle';
+import AudioReactiveParticles from './components/AudioReactiveParticles';
+import DoubleExposure from './components/DoubleExposure';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
@@ -26,6 +28,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} bg-black text-[#F5F5F5] antialiased`}>
         <SoundProvider>
+          <DoubleExposure />
+          <AudioReactiveParticles />
           <Preloader />
           <GrainOverlay />
           <CustomCursor />

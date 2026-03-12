@@ -5,6 +5,7 @@ import { useState } from 'react';
 import MagneticButton from './MagneticButton';
 import MenuOverlay from './MenuOverlay';
 import { useSound } from './SoundProvider';
+import LiquidLogo from './LiquidLogo';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +20,7 @@ export default function Nav() {
         className="fixed top-0 left-0 w-full z-[90] flex justify-between items-center px-8 md:px-16 py-10 mix-blend-difference text-white pointer-events-none"
       >
         <MagneticButton className="pointer-events-auto">
-          <div className="text-3xl md:text-5xl font-serif font-bold tracking-tighter cursor-pointer" data-cursor="view" onClick={playClick}>
-            1820
-          </div>
+           <LiquidLogo />
         </MagneticButton>
         
         <div className="pointer-events-auto">

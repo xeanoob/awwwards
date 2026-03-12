@@ -8,7 +8,6 @@ import Marquee from './components/Marquee';
 import Footer from './components/Footer';
 import StickyStacking from './components/StickyStacking';
 import BehindTheScenesGallery from './components/BehindTheScenesGallery';
-import InfiniteTunnel from './components/InfiniteTunnel';
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
       <Philosophy />
       <Expertise />
       <Marquee />
-      <InfiniteTunnel />
       <StickyStacking />
       <WorkGrid />
       <BehindTheScenesGallery />
