@@ -29,15 +29,15 @@ export default function Preloader() {
             }
             if (cIndex > cutWords.length) {
               clearInterval(cutInterval);
-              setTimeout(() => setIsLoading(false), 200);
+              setTimeout(() => setIsLoading(false), 400); // Wait longer before completely fading out
             }
-          }, 150); // Flash every 150ms
+          }, 350); // Increased from 150 to 350 so the user can read the words
           
           return 100;
         }
-        return prev + Math.floor(Math.random() * 10) + 2;
+        return prev + Math.floor(Math.random() * 8) + 1; // Slower progress increments
       });
-    }, 80);
+    }, 120); // Slower global polling from 80 to 120
 
     return () => clearInterval(interval);
   }, []);
