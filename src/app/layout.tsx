@@ -10,6 +10,7 @@ import { SoundProvider } from './components/SoundProvider';
 import SoundToggle from './components/SoundToggle';
 import AudioReactiveParticles from './components/AudioReactiveParticles';
 import DoubleExposure from './components/DoubleExposure';
+import FluidCursor from './components/FluidCursor';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
