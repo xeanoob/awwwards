@@ -8,11 +8,11 @@ import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
-  { id: 1, title: 'KINETIC_SILK', client: 'OFFTIME SS25', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1600' },
-  { id: 2, title: 'STRUCTURAL_NOIR', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600' },
-  { id: 3, title: 'ATELIER_CHROME', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600' },
-  { id: 4, title: 'STRETCH_GRAIN', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600' },
-  { id: 5, title: 'THE_COUTURE_VOID', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600' },
+  { id: 1, title: 'KINETIC_SILK', client: 'OFFTIME SS25', imgUrl: 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?auto=format&fit=crop&w=1600', slug: 'kinetic-silk' },
+  { id: 2, title: 'STRUCTURAL_NOIR', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1600', slug: 'structural-noir' },
+  { id: 3, title: 'ATELIER_CHROME', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600', slug: 'atelier-chrome' },
+  { id: 4, title: 'STRETCH_GRAIN', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600', slug: 'stretch-grain' },
+  { id: 5, title: 'THE_COUTURE_VOID', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600', slug: 'couture-void' },
 ];
 
 function VideoCard({ project, index, total, radius, onClick }: any) {
@@ -165,11 +165,21 @@ function PostProcessingEffect({ velocityRef }: any) {
     return null;
 }
 
-export default function WebglCarousel({ onProjectClick }: { onProjectClick?: (id?: number) => void }) {
+import { useRouter } from 'next/navigation';
+
+export default function WebglCarousel() {
+  const router = useRouter();
   const velocityRef = useRef(0);
   const isDragging = useRef(false);
   const prevX = useRef(0);
   const { playHeartbeat } = useSound();
+
+  const handleProjectClick = (id: number) => {
+    const project = projects.find(p => p.id === id);
+    if (project?.slug) {
+      router.push(`/work/${project.slug}`);
+    }
+  };
 
   const handlePointerDown = (e: React.PointerEvent) => {
     isDragging.current = true;

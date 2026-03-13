@@ -5,12 +5,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 const btsData = [
-  { title: 'THE ATELIER', img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200' },
-  { title: 'BACKSTAGE', img: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200' },
-  { title: 'THE SET', img: 'https://images.unsplash.com/photo-1537832816519-689ad163238b?q=80&w=1200' },
-  { title: 'STYLING', img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200' },
-  { title: 'RUNWAY PREP', img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1200' },
-  { title: 'ART DIRECTION', img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200' },
+  { title: 'THE ATELIER', img: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200' }, 
+  { title: 'KINETIC_FLOW', img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200' }, 
+  { title: 'STRUCTURAL_NOIR', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1200' }, 
+  { title: 'AVANT_GARDE', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200' }, 
+  { title: 'RUNWAY_PREP', img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1200' }, 
+  { title: 'THE_PREP', img: 'https://images.unsplash.com/photo-1537832816519-689ad163238b?q=80&w=1200' }, 
 ];
 
 export default function BehindTheScenesGallery() {
