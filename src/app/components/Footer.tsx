@@ -16,14 +16,14 @@ export default function Footer() {
           </p>
         </div>
         <div className="hidden md:flex flex-col items-end gap-2 text-[10px] uppercase tracking-widest font-sans font-medium">
-          <a href="mailto:hello@temporaloffset.studio" className="hover:opacity-50 transition-opacity" data-cursor="view" onClick={playClick}>hello@temporaloffset.studio</a>
+          <a href="mailto:hello@offtime.studio" className="hover:opacity-50 transition-opacity" data-cursor="view" onClick={playClick}>hello@offtime.studio</a>
           <a href="tel:+33100000000" className="hover:opacity-50 transition-opacity" data-cursor="view" onClick={playClick}>+33 1 00 00 00 00</a>
         </div>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between items-end pb-8 mt-24">
-        <div className="font-serif text-[18vw] md:text-[8vw] leading-[0.7] tracking-tighter opacity-90 select-none">
-          Temporal Offset
+        <div className="font-serif text-[18vw] md:text-[10vw] leading-[0.7] tracking-tighter opacity-90 select-none">
+          OffTime
         </div>
         
         <div className="flex gap-8 font-sans text-[10px] uppercase tracking-[0.3em] font-medium opacity-60 mt-8 md:mt-0">

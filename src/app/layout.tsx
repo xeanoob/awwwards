@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: 'Temporal Offset',
+  title: 'OffTime',
   description: 'Boutique film production agency',
 };
 
