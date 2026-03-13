@@ -59,7 +59,7 @@ function LogoMesh({ playClick }: { playClick: () => void }) {
         ctx.fillStyle = 'white';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('1820', 256, 128);
+        ctx.fillText('T_OFFSET', 256, 128);
     }
     const tex = new THREE.CanvasTexture(canvas);
     // Needs linear filtering to not look pixelated

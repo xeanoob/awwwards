@@ -30,8 +30,8 @@ export default function ContactPage() {
                 </p>
 
                 <div className="flex gap-4 mb-20">
-                  <a href="mailto:hello@1820.studio" className="border border-white/20 px-8 py-4 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors" data-cursor="view" onClick={playClick}>
-                      hello@1820.studio
+                  <a href="mailto:hello@temporaloffset.studio" className="border border-white/20 px-8 py-4 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors" data-cursor="view" onClick={playClick}>
+                      hello@temporaloffset.studio
                   </a>
                 </div>
             </div>

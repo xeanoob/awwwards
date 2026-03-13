@@ -14,7 +14,7 @@ export default function AboutPage() {
         </h1>
         <div className="max-w-3xl font-sans text-sm md:text-base leading-relaxed opacity-80 mt-12">
           <p className="mb-6 font-medium text-xl">
-            At 1820, we don&apos;t just capture light on a sensor. We manipulate the viewer&apos;s perception of time.
+            At Temporal Offset, we don&apos;t just capture light on a sensor. We manipulate the viewer&apos;s perception of time.
           </p>
           <p className="opacity-70">
             Through meticulous editing, kinetic typography, and fluid digital design, we stretch seconds into profound moments. 

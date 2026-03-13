@@ -45,7 +45,7 @@ export default function Preloader() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              1820 Studios
+              Temporal Offset
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 10 }}

@@ -11,12 +11,13 @@ import SoundToggle from './components/SoundToggle';
 import AudioReactiveParticles from './components/AudioReactiveParticles';
 import DoubleExposure from './components/DoubleExposure';
 import FluidCursor from './components/FluidCursor';
+import LiquidTransition from './components/LiquidTransition';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: '1820 | Cinematic Productions',
+  title: 'Temporal Offset | Cinematic Productions',
   description: 'Boutique film production agency',
 };
 
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} bg-black text-[#F5F5F5] antialiased`}>
         <SoundProvider>
+          <LiquidTransition />
           <DoubleExposure />
           <AudioReactiveParticles />
           <Preloader />

@@ -1,50 +1,58 @@
 'use client';
 
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-// SVG Path for a liquid wipe effect
-const initialPath = `M0 0 L0 0 Q50vw 0 100vw 0 L100vw 0Z`;
-const targetPath = `M0 0 L0 100vh Q50vw 100vh 100vw 100vh L100vw 0Z`;
-const curvePath = `M0 0 L0 50vh Q50vw 100vh 100vw 50vh L100vw 0Z`;
+const narrative = [
+  "TIME IS A FLUID...",
+  "TRACING THE DISTORTION...",
+  "ARCHIVE_VIVANTE_01",
+  "BENDING REALITY...",
+  "MEMORY FRAGMENT FOUND",
+];
 
-export default function LiquidTransition({ isVisible, onComplete }: { isVisible: boolean, onComplete: () => void }) {
-  
-  const curve = {
-    initial: {
-      d: initialPath,
-    },
-    enter: {
-      d: [initialPath, curvePath, targetPath],
-      transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] }
-    },
-    exit: {
-      d: [targetPath, curvePath, initialPath],
-      transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] }
-    }
-  };
+export default function LiquidTransition() {
+  const pathname = usePathname();
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    setIsTransitioning(true);
+    setDisplayText(narrative[Math.floor(Math.random() * narrative.length)]);
+    const timer = setTimeout(() => setIsTransitioning(false), 2000);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   return (
-    <AnimatePresence onExitComplete={onComplete}>
-      {isVisible && (
-        <motion.div className="fixed inset-0 z-[150] pointer-events-none flex flex-col justify-center items-center">
-          <svg className="w-full h-[150vh] absolute top-[-25vh] left-0 pointer-events-none" preserveAspectRatio="none">
-            <motion.path 
-              variants={curve} 
-              initial="initial" 
-              animate="enter" 
-              exit="exit" 
-              fill="#050505" 
-            />
-          </svg>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="z-10 font-serif text-6xl text-white italic tracking-tighter"
+    <AnimatePresence mode="wait">
+      {isTransitioning && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed inset-0 z-[200] pointer-events-none flex items-center justify-center bg-black/60 backdrop-blur-[100px]"
+        >
+          {/* Stretch & Blur Effect Container */}
+          <motion.div 
+            initial={{ scaleY: 0.1, scaleX: 1.5, opacity: 0, filter: 'blur(20px)' }}
+            animate={{ scaleY: 1, scaleX: 1, opacity: 1, filter: 'blur(0px)' }}
+            exit={{ scaleY: 0.1, scaleX: 1.5, opacity: 0, filter: 'blur(20px)' }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+            className="flex flex-col items-center"
           >
-            Entering Project
+            <h2 className="font-serif text-5xl md:text-[6vw] text-white italic tracking-tighter mix-blend-difference">
+              {displayText}
+            </h2>
+            <div className="w-64 h-[1px] bg-white/20 mt-8 overflow-hidden">
+               <motion.div 
+                initial={{ x: '-100%' }}
+                animate={{ x: '100%' }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                className="w-1/2 h-full bg-white"
+               />
+            </div>
           </motion.div>
         </motion.div>
       )}
