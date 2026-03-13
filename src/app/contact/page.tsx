@@ -26,7 +26,7 @@ export default function ContactPage() {
                   Get in touch.
                 </motion.h1>
                 <p className="font-sans text-sm tracking-[0.2em] uppercase opacity-60 mb-12">
-                  Let's distort reality together.
+                  Let&apos;s distort reality together.
                 </p>
 
                 <div className="flex gap-4 mb-20">
@@ -39,7 +39,7 @@ export default function ContactPage() {
             <div className="flex flex-col md:flex-row gap-16">
                 <div>
                   <h3 className="font-sans text-[10px] uppercase tracking-widest opacity-40 mb-2">Paris HQ</h3>
-                  <p className="font-serif text-xl italic opacity-80 leading-snug">14 Rue de l'Illusion<br/>75003 Paris, France</p>
+                  <p className="font-serif text-xl italic opacity-80 leading-snug">14 Rue de l&apos;Illusion<br/>75003 Paris, France</p>
                 </div>
                 <div>
                   <h3 className="font-sans text-[10px] uppercase tracking-widest opacity-40 mb-2">Tokyo Labs</h3>

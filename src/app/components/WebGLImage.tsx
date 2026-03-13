@@ -4,6 +4,7 @@ import { useRef, useState, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import * as THREE from 'three';
+import Image from 'next/image';
 
 const vertexShader = `
   varying vec2 vUv;
@@ -88,7 +89,7 @@ export default function WebGLImage({ src, className }: { src: string, className?
         <Scene src={src} />
       </Canvas>
       {/* Background to show while canvas loads */}
-      <img src={src} alt="" className="w-full h-full object-cover grayscale opacity-20 absolute inset-0 -z-10" />
+      <Image src={src} alt="" fill className="w-full h-full object-cover grayscale opacity-20 absolute inset-0 -z-10" />
     </div>
   );
 }

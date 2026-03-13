@@ -2,6 +2,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import WebGLImageTrail from '../components/WebGLImageTrail';
 import MagneticButton from '../components/MagneticButton';
+import Image from 'next/image';
 
 // Extended list of fake projects
 const projects = [
@@ -67,9 +68,11 @@ export default function WorkPage() {
                                 className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 ease-[0.16,1,0.3,1]"
                               />
                           ) : (
-                              <img 
+                              <Image 
                                 src={project.url} 
                                 alt={project.title} 
+                                width={800}
+                                height={1000}
                                 className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 ease-[0.16,1,0.3,1]"
                               />
                           )}

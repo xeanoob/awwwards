@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSound } from './SoundProvider';
 
 const links = [
@@ -47,7 +48,7 @@ export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, t
               {link.isVideo ? (
                 <video src={link.img} autoPlay loop muted playsInline className="w-full h-full object-cover grayscale brightness-50" />
               ) : (
-                <img src={link.img} alt="" className="w-full h-full object-cover grayscale brightness-50" />
+                <Image src={link.img} alt="" fill className="w-full h-full object-cover grayscale brightness-50" />
               )}
             </div>
           ))}
