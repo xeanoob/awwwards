@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 
 const images = [
   '/images/about.jpg',
@@ -39,9 +40,10 @@ export default function BehindTheScenesGallery() {
               className="relative h-full w-[80vw] md:w-[60vw] shrink-0 overflow-hidden"
               data-cursor="view"
             >
-              <img 
+              <Image 
                 src={img} 
                 alt="BTS" 
+                fill
                 className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000 ease-out"
               />
               <div className="absolute bottom-10 flex w-full justify-between items-end px-10 mix-blend-difference pointer-events-none">

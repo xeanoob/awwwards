@@ -1,5 +1,6 @@
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -13,7 +14,7 @@ export default function AboutPage() {
         </h1>
         <div className="max-w-3xl font-sans text-sm md:text-base leading-relaxed opacity-80 mt-12">
           <p className="mb-6 font-medium text-xl">
-            At 1820, we don't just capture light on a sensor. We manipulate the viewer's perception of time.
+            At 1820, we don&apos;t just capture light on a sensor. We manipulate the viewer&apos;s perception of time.
           </p>
           <p className="opacity-70">
             Through meticulous editing, kinetic typography, and fluid digital design, we stretch seconds into profound moments. 
@@ -25,9 +26,11 @@ export default function AboutPage() {
 
       {/* Manifest Image Break */}
       <section className="w-full h-[60vh] md:h-screen bg-[#111] overflow-hidden group">
-          <img 
+          <Image 
             src="/images/about.jpg" 
             alt="Studio Manifest" 
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover grayscale opacity-50 group-hover:scale-105 group-hover:opacity-80 transition-all duration-[2s]" 
           />
       </section>

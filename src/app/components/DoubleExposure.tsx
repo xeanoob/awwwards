@@ -23,8 +23,9 @@ export default function DoubleExposure() {
     setTimeout(startWebcam, 2000);
 
     return () => {
-      if (videoRef.current && videoRef.current.srcObject) {
-         const tracks = (videoRef.current.srcObject as MediaStream).getTracks();
+      const currentVideo = videoRef.current;
+      if (currentVideo && currentVideo.srcObject) {
+         const tracks = (currentVideo.srcObject as MediaStream).getTracks();
          tracks.forEach(track => track.stop());
       }
     };

@@ -10,7 +10,7 @@ export default function Footer() {
       
       <div className="flex justify-between items-start mt-16 md:mt-16">
         <div className="max-w-xl">
-          <h2 className="font-serif text-4xl md:text-5xl tracking-tighter mb-4 italic">Let's create.</h2>
+          <h2 className="font-serif text-4xl md:text-5xl tracking-tighter mb-4 italic">Let&apos;s create.</h2>
           <p className="font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-60">
             Bend time with us.
           </p>
