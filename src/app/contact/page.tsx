@@ -23,10 +23,10 @@ export default function ContactPage() {
                   transition={{ duration: 1, ease: "easeOut" }}
                   className="font-serif text-6xl md:text-[8vw] leading-[0.85] tracking-tighter mb-8 italic"
                 >
-                  Get in touch.
+                  Initiate Sequence.
                 </motion.h1>
                 <p className="font-sans text-sm tracking-[0.2em] uppercase opacity-60 mb-12">
-                  Let&apos;s distort reality together.
+                  Trace the distortion.
                 </p>
 
                 <div className="flex gap-4 mb-20">
@@ -87,7 +87,7 @@ export default function ContactPage() {
                       required
                     />
                     <label htmlFor="message" className="absolute left-0 top-4 font-sans text-[10px] uppercase tracking-widest opacity-50 peer-focus:-top-4 peer-focus:text-[8px] peer-valid:-top-4 peer-valid:text-[8px] transition-all cursor-text pointer-events-none">
-                        Tell us about the project
+                        Define the Distortion
                     </label>
                 </div>
 

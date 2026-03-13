@@ -30,7 +30,7 @@ export default function Nav() {
               className="text-[10px] md:text-xs font-sans uppercase tracking-[0.3em] font-medium hover:opacity-50 transition-opacity border px-4 py-2 rounded-full border-white/20 hover:border-white/50"
               data-cursor="view"
             >
-              Menu
+              [ ARCHIVE ]
             </button>
           </MagneticButton>
         </div>

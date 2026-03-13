@@ -4,13 +4,13 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
-const images = [
-  'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800',
-  'https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?q=80&w=800',
-  'https://images.unsplash.com/photo-1621605815841-28d645d0232e?q=80&w=800',
-  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800',
-  'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800',
-  'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800',
+const btsData = [
+  { title: 'THE ATELIER', img: 'https://images.unsplash.com/photo-1598409395922-be001e403487?q=80&w=800' },
+  { title: 'BACKSTAGE', img: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=800' },
+  { title: 'THE SET', img: 'https://images.unsplash.com/photo-1603126760591-6e3e5c9a4bd6?q=80&w=800' },
+  { title: 'STYLING', img: 'https://images.unsplash.com/photo-1616766467007-06222b467f56?q=80&w=800' },
+  { title: 'RUNWAY PREP', img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800' },
+  { title: 'ART DIRECTION', img: 'https://images.unsplash.com/photo-1579159278996-8e50bc961803?q=80&w=800' },
 ];
 
 export default function BehindTheScenesGallery() {
@@ -20,7 +20,7 @@ export default function BehindTheScenesGallery() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']); 
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-83%']); 
 
   return (
     <section ref={targetRef} className="relative h-[400vh] bg-black">
@@ -31,26 +31,27 @@ export default function BehindTheScenesGallery() {
             Behind the Lens
           </h2>
           <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-white/50 mt-2">
-            Horizontal Stacking
+            Archive Vivante
           </p>
         </div>
 
         <motion.div style={{ x }} className="flex h-[60vh] md:h-[80vh] gap-10 md:gap-20 px-[10vw]">
-          {images.map((img, i) => (
+          {btsData.map((item, i) => (
             <div 
               key={i} 
               className="relative h-full w-[80vw] md:w-[60vw] shrink-0 overflow-hidden"
               data-cursor="view"
             >
               <Image 
-                src={img} 
-                alt="BTS" 
+                src={item.img} 
+                alt={item.title} 
                 fill
                 className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000 ease-out"
+                sizes="(max-width: 768px) 80vw, 60vw"
               />
               <div className="absolute bottom-10 flex w-full justify-between items-end px-10 mix-blend-difference pointer-events-none">
-                <span className="font-sans text-xs tracking-[0.2em] text-white uppercase opacity-70">BTS Vol. {i + 1}</span>
-                <span className="font-serif text-4xl text-white italic">1820</span>
+                <span className="font-sans text-xs tracking-[0.2em] text-white uppercase opacity-70">{item.title}</span>
+                <span className="font-serif text-4xl text-white italic">{(1820 + i).toString()}</span>
               </div>
             </div>
           ))}

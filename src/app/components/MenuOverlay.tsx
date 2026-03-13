@@ -7,11 +7,11 @@ import Image from 'next/image';
 import { useSound } from './SoundProvider';
 
 const links = [
-  { name: 'HOME', href: '/', img: 'https://assets.mixkit.co/videos/809/809-720.mp4', isVideo: true },
-  { name: 'WORK', href: '/work', img: 'https://assets.mixkit.co/videos/52270/52270-720.mp4', isVideo: true },
-  { name: 'STUDIO', href: '/studio', img: 'https://assets.mixkit.co/videos/23327/23327-720.mp4', isVideo: true },
-  { name: 'ABOUT', href: '/about', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800', isVideo: false },
-  { name: 'CONTACT', href: '/contact', img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800', isVideo: false },
+  { name: 'TIME_ZERO', href: '/', img: 'https://assets.mixkit.co/videos/809/809-720.mp4', isVideo: true },
+  { name: 'BROWSE_ANOMALIES', href: '/work', img: 'https://assets.mixkit.co/videos/52270/52270-720.mp4', isVideo: true },
+  { name: 'THE_ATELIER', href: '/studio', img: 'https://assets.mixkit.co/videos/23327/23327-720.mp4', isVideo: true },
+  { name: 'DISTORT_TIME', href: '/about', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800', isVideo: false },
+  { name: 'INITIATE_SEQUENCE', href: '/contact', img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800', isVideo: false },
 ];
 
 export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, toggleMenu: () => void }) {
@@ -93,7 +93,7 @@ export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, t
           >
             <a href="#" className="hover:opacity-100 transition-opacity">Instagram</a>
             <a href="#" className="hover:opacity-100 transition-opacity">Vimeo</a>
-            <a href="#" className="hover:opacity-100 transition-opacity">Contact</a>
+            <a href="/contact" className="hover:opacity-100 transition-opacity">Initiate Sequence</a>
           </motion.div>
         </motion.div>
       )}
