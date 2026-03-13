@@ -13,19 +13,19 @@ export default function StickyMaskReveal() {
   });
 
   // Scale the mask from a tiny circle (0) to massively covering the screen (300)
-  const maskSize = useTransform(scrollYProgress, [0, 0.8], [0, 300]);
+  const maskSize = useTransform(scrollYProgress, [0, 0.6], [0, 300]);
   const clipPath = useMotionTemplate`circle(${maskSize}vw at center center)`;
   
   // Fade out foreground text as mask grows
-  const foregroundOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
-  const foregroundScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.2]);
+  const foregroundOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const foregroundScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
 
-  // Final fade out of the entire white layer to prevent "white screen gap"
-  const finalLayerOpacity = useTransform(scrollYProgress, [0.8, 0.95], [1, 0]);
+  // Final fade out of the entire white layer to prevent "white screen gap" early
+  const finalLayerOpacity = useTransform(scrollYProgress, [0.6, 0.75], [1, 0]);
   
   // Fade in background text as mask grows, and fade out at the end
-  const backgroundOpacity = useTransform(scrollYProgress, [0.3, 0.7, 0.9, 0.98], [0, 1, 1, 0]);
-  const backgroundScale = useTransform(scrollYProgress, [0.2, 0.8], [0.8, 1]);
+  const backgroundOpacity = useTransform(scrollYProgress, [0.1, 0.3, 0.8, 0.95], [0, 1, 1, 0]);
+  const backgroundScale = useTransform(scrollYProgress, [0.1, 0.45], [0.9, 1]);
 
   return (
     <section ref={container} className="relative h-[300vh] bg-black">

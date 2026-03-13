@@ -48,13 +48,13 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         onClick={(e) => { e.stopPropagation(); onClick(); }}
         position={[0, 0, 0]}
       >
-        <planeGeometry args={[4.8, 2.7]} />
+        <planeGeometry args={[3.2, 4.8]} />
         <meshBasicMaterial map={texture} color={hovered ? "white" : "#888"} />
       </mesh>
       
       {/* Project Title */}
       <Text 
-        position={[0, -1.8, 0.1]} 
+        position={[0, -2.8, 0.1]} 
         fontSize={0.4} 
         color="#ffffff" 
         anchorX="center"
@@ -63,7 +63,7 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         {project.title}
       </Text>
       <Text 
-        position={[0, -2.2, 0.1]} 
+        position={[0, -3.2, 0.1]} 
         fontSize={0.15} 
         color="#ffffff" 
         anchorX="center"
