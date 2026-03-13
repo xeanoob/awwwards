@@ -18,6 +18,8 @@ const projects = [
 function VideoCard({ project, index, total, radius, onClick }: any) {
   const texture = useTexture(project.imgUrl) as THREE.Texture;
   const [hovered, setHover] = useState(false);
+  const [hoverTime, setHoverTime] = useState(0);
+  const [showDetails, setShowDetails] = useState(false);
   const meshRef = useRef<THREE.Mesh>(null);
   const { playClick } = useSound();
 
@@ -31,8 +33,19 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
   useFrame((state, delta) => {
       if (meshRef.current) {
           // Smooth hover scale
-          const targetScale = hovered ? 1.1 : 1;
+          const targetScale = hovered ? 1.05 : 1;
           meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, 1), 0.1);
+
+          if (hovered) {
+            setHoverTime(prev => {
+              const next = prev + delta;
+              if (next > 1.2 && !showDetails) setShowDetails(true);
+              return next;
+            });
+          } else {
+            setHoverTime(0);
+            if (showDetails) setShowDetails(false);
+          }
       }
   });
 
@@ -49,7 +62,7 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         position={[0, 0, 0]}
       >
         <planeGeometry args={[3.2, 4.8]} />
-        <meshBasicMaterial map={texture} color={hovered ? "white" : "#888"} />
+        <meshBasicMaterial map={texture} color={hovered ? "white" : "#888"} transparent opacity={hovered ? 1 : 0.8} />
       </mesh>
       
       {/* Project Title */}
@@ -64,14 +77,46 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
       </Text>
       <Text 
         position={[0, -3.2, 0.1]} 
-        fontSize={0.15} 
+        fontSize={0.12} 
         color="#ffffff" 
         anchorX="center"
-        letterSpacing={0.2}
-        fillOpacity={hovered ? 0.8 : 0.3}
+        letterSpacing={0.3}
+        fillOpacity={hovered ? 0.8 : 0.2}
       >
         {project.client.toUpperCase()}
       </Text>
+
+      {/* Archive Vivante Hidden Details */}
+      {showDetails && (
+        <group position={[0, 0, 0.1]}>
+           <Text 
+            position={[-1.4, 2.2, 0]} 
+            fontSize={0.08} 
+            color="#ffffff" 
+            anchorX="left"
+            maxWidth={2}
+          >
+            {"FRAG_ID: " + (index + 1092).toString(16).toUpperCase()}
+          </Text>
+          <Text 
+            position={[1.4, -2.2, 0]} 
+            fontSize={0.07} 
+            color="#ffffff" 
+            anchorX="right"
+          >
+            {"COORD: " + (48.8 + index).toFixed(1) + "N, " + (2.3 + index).toFixed(1) + "E"}
+          </Text>
+          <Text 
+            position={[0, 0, 0]} 
+            fontSize={0.15} 
+            color="#ffffff" 
+            anchorX="center"
+            fillOpacity={0.1}
+          >
+            LIVING ARCHIVE
+          </Text>
+        </group>
+      )}
     </group>
   );
 }

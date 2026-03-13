@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-export default function MagneticButton({ children, className }: { children: React.ReactNode, className?: string }) {
+export default function MagneticButton({ children, className, type = 'attract', strength = 0.3 }: { children: React.ReactNode, className?: string, type?: 'attract' | 'flee', strength?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -12,7 +12,9 @@ export default function MagneticButton({ children, className }: { children: Reac
     const { height, width, left, top } = ref.current!.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * 0.3, y: middleY * 0.3 });
+    
+    const factor = type === 'attract' ? strength : -strength * 1.5;
+    setPosition({ x: middleX * factor, y: middleY * factor });
   };
 
   const reset = () => {
