@@ -8,15 +8,15 @@ import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
-  { id: 1, title: 'Summer Collection', client: 'Céline', imgUrl: 'https://images.unsplash.com/photo-1620712943543-bcc462824100?q=80&w=800' },
-  { id: 2, title: 'Winter Noir', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1616422285623-13ff0167c95c?q=80&w=800' },
-  { id: 3, title: 'Avant-Garde', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?q=80&w=800' },
-  { id: 4, title: 'Velocity', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1610398041455-acc134954477?q=80&w=800' },
-  { id: 5, title: 'High Editorial', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800' },
+  { id: 1, title: 'Summer Collection', client: 'Céline', imgUrl: 'https://images.unsplash.com/photo-1704208316515-a32f81e373ef?auto=format&fit=crop&w=800&q=80' },
+  { id: 2, title: 'Winter Noir', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1601597565151-70c4020dc0e1?auto=format&fit=crop&w=800&q=80' },
+  { id: 3, title: 'Avant-Garde', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1586079615844-c0abfb04dc79?auto=format&fit=crop&w=800&q=80' },
+  { id: 4, title: 'Velocity', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80' },
+  { id: 5, title: 'High Editorial', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1603189343302-e603f7add05a?auto=format&fit=crop&w=800&q=80' },
 ];
 
 function VideoCard({ project, index, total, radius, onClick }: any) {
-  const texture = useTexture(project.imgUrl);
+  const texture = useTexture(project.imgUrl) as THREE.Texture;
   const [hovered, setHover] = useState(false);
   const meshRef = useRef<THREE.Mesh>(null);
   const { playClick } = useSound();
