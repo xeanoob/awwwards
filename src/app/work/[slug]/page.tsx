@@ -27,16 +27,27 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         'https://images.unsplash.com/photo-1558769132-cb1aea458c5e'
       ]
     },
-    'atelier-chrome': {
-        title: 'ATELIER_CHROME',
-        client: 'Rick Owens',
-        hero: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1920',
-        description: 'Post-industrial tailoring in the heart of the atelier void.',
-        fragments: [
-          'https://images.unsplash.com/photo-1539109136881-3be0616acf4b',
-          'https://images.unsplash.com/photo-1496747611176-843222e1e57c',
-          'https://images.unsplash.com/photo-1509631179647-0177331693ae'
-        ]
+    'stretch-grain': {
+      title: 'STRETCH_GRAIN',
+      client: 'Nike Lab',
+      hero: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1920',
+      description: 'The intersection of performance ergonomics and raw textile noise.',
+      fragments: [
+        'https://images.unsplash.com/photo-1558769132-cb1aea458c5e',
+        'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f',
+        'https://images.unsplash.com/photo-1531123414780-f74242c2b052'
+      ]
+    },
+    'couture-void': {
+      title: 'THE_COUTURE_VOID',
+      client: 'Vogue France',
+      hero: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1920',
+      description: 'A deep immersion into the negative space of contemporary couture.',
+      fragments: [
+        'https://images.unsplash.com/photo-1539109136881-3be0616acf4b',
+        'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f',
+        'https://images.unsplash.com/photo-1509631179647-0177331693ae'
+      ]
     }
   };
 

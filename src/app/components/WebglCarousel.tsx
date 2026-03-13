@@ -6,6 +6,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Text, useVideoTexture, useTexture, Environment } from '@react-three/drei';
 import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
+import { useRouter } from 'next/navigation';
 
 const projects = [
   { id: 1, title: 'KINETIC_SILK', client: 'OFFTIME SS25', imgUrl: 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?auto=format&fit=crop&w=1600', slug: 'kinetic-silk' },
@@ -15,7 +16,7 @@ const projects = [
   { id: 5, title: 'THE_COUTURE_VOID', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600', slug: 'couture-void' },
 ];
 
-function VideoCard({ project, index, total, radius, onClick }: any) {
+function VideoCard({ project, index, total, radius, velocityRef, onClick }: any) {
   const texture = useTexture(project.imgUrl) as THREE.Texture;
   const [hovered, setHover] = useState(false);
   const [hoverTime, setHoverTime] = useState(0);
@@ -58,51 +59,61 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         ref={meshRef}
         onPointerOver={(e) => { e.stopPropagation(); setHover(true); playClick(); document.body.style.cursor = 'pointer'; }}
         onPointerOut={(e) => { e.stopPropagation(); setHover(false); document.body.style.cursor = 'auto'; }}
-        onClick={(e) => { e.stopPropagation(); onClick(); }}
+        onClick={(e) => { 
+          e.stopPropagation(); 
+          // Only trigger if we weren't just dragging
+          if (Math.abs(velocityRef.current) < 0.5) {
+            onClick(); 
+          }
+        }}
         position={[0, 0, 0]}
       >
-        <planeGeometry args={[4, 5.5]} />
+        <planeGeometry args={[4, 7]} />
         <meshBasicMaterial map={texture} color={hovered ? "white" : "#888"} transparent opacity={hovered ? 1 : 0.8} />
       </mesh>
       
       {/* Project Title */}
       <Text 
-        position={[0, -3.2, 0.1]} 
+        position={[0, -4, 0.1]} 
         fontSize={0.4} 
         color="#ffffff" 
         anchorX="center"
         fillOpacity={hovered ? 1 : 0.5}
+        raycast={() => null}
       >
         {project.title}
       </Text>
       <Text 
-        position={[0, -3.6, 0.1]} 
+        position={[0, -4.4, 0.1]} 
         fontSize={0.12} 
         color="#ffffff" 
         anchorX="center"
         letterSpacing={0.3}
         fillOpacity={hovered ? 0.8 : 0.2}
+        raycast={() => null}
       >
         {project.client.toUpperCase()}
       </Text>
 
       {/* Archive Vivante Hidden Details */}
       {showDetails && (
-        <group position={[0, 0, 0.1]}>
+        <group position={[0, 0, 0.2]}>
            <Text 
-            position={[-1.4, 2.2, 0]} 
+            position={[-1.4, 3, 0]} 
             fontSize={0.08} 
             color="#ffffff" 
             anchorX="left"
             maxWidth={2}
+            raycast={() => null}
           >
             {"FRAG_ID: " + (index + 1092).toString(16).toUpperCase()}
           </Text>
           <Text 
-            position={[1.4, -2.2, 0]} 
+            position={[1.4, -3, 0]} 
             fontSize={0.07} 
             color="#ffffff" 
             anchorX="right"
+            raycast={() => null}
           >
             {"COORD: " + (48.8 + index).toFixed(1) + "N, " + (2.3 + index).toFixed(1) + "E"}
           </Text>
@@ -112,6 +123,7 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
             color="#ffffff" 
             anchorX="center"
             fillOpacity={0.1}
+            raycast={() => null}
           >
             LIVING ARCHIVE
           </Text>
@@ -152,6 +164,7 @@ function Ring({ velocityRef, onProjectClick }: any) {
             index={i} 
             total={projects.length} 
             radius={radius} 
+            velocityRef={velocityRef}
             onClick={() => onProjectClick ? onProjectClick(project.id) : null}
         />
       ))}
@@ -164,8 +177,6 @@ function PostProcessingEffect({ velocityRef }: any) {
     // A simple way to add grain without heavy post-processing library is via HTML overlay with opacity based on velocity
     return null;
 }
-
-import { useRouter } from 'next/navigation';
 
 export default function WebglCarousel() {
   const router = useRouter();
@@ -181,9 +192,12 @@ export default function WebglCarousel() {
     }
   };
 
+  const [mouseDownTime, setMouseDownTime] = useState(0);
+
   const handlePointerDown = (e: React.PointerEvent) => {
     isDragging.current = true;
     prevX.current = e.clientX;
+    setMouseDownTime(Date.now());
     document.body.style.cursor = 'grabbing';
   };
 
@@ -200,9 +214,12 @@ export default function WebglCarousel() {
     }
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = (e: React.PointerEvent) => {
     isDragging.current = false;
     document.body.style.cursor = 'auto';
+    
+    // If the mouse was down for less than 200ms and didn't move much, 
+    // we let the project click through. (R3F handles the mesh click separately)
   };
 
   return (
@@ -223,7 +240,7 @@ export default function WebglCarousel() {
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <Suspense fallback={null}>
-          <Ring velocityRef={velocityRef} onProjectClick={onProjectClick} />
+          <Ring velocityRef={velocityRef} onProjectClick={handleProjectClick} />
         </Suspense>
       </Canvas>
       

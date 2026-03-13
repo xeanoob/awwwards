@@ -2,18 +2,18 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import WebGLImageTrail from '../components/WebGLImageTrail';
 import MagneticButton from '../components/MagneticButton';
-import Image from 'next/image';
+import Link from 'next/link';
 
-// Extended list of fake projects
+// Extended list of authentic fashion projects
 const projects = [
-  { id: 1, client: "Vogue", title: "Midnight Sun", year: "2026", type: "video", url: "/videos/video1.mp4" },
-  { id: 2, client: "Porsche", title: "Velocity", year: "2025", type: "image", url: "/images/gallery1.jpg" },
-  { id: 3, client: "Nike", title: "Atmos", year: "2025", type: "video", url: "/videos/video2.mp4" },
-  { id: 4, client: "L'Oréal", title: "Radiance", year: "2024", type: "image", url: "/images/gallery2.jpg" },
-  { id: 5, client: "Chanel", title: "Echoes", year: "2024", type: "video", url: "/videos/video3.mp4" },
-  { id: 6, client: "Dior", title: "Aether", year: "2024", type: "image", url: "/images/about.jpg" },
-  { id: 7, client: "Saint Laurent", title: "Noir", year: "2023", type: "image", url: "/images/gallery1.jpg" },
-  { id: 8, client: "Cartier", title: "Timeless", year: "2023", type: "video", url: "/videos/video1.mp4" },
+  { id: 1, client: "OFFTIME SS25", title: "KINETIC_SILK", year: "2026", type: "image", url: "https://images.unsplash.com/photo-1531123414780-f74242c2b052?auto=format&fit=crop&w=800", slug: "kinetic-silk" },
+  { id: 2, client: "Saint Laurent", title: "STRUCTURAL_NOIR", year: "2025", type: "image", url: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800", slug: "structural-noir" },
+  { id: 3, client: "Rick Owens", title: "ATELIER_CHROME", year: "2025", type: "image", url: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800", slug: "atelier-chrome" },
+  { id: 4, client: "Nike Lab", title: "STRETCH_GRAIN", year: "2024", type: "image", url: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800", slug: "stretch-grain" },
+  { id: 5, client: "Vogue France", title: "THE_COUTURE_VOID", year: "2024", type: "image", url: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800", slug: "couture-void" },
+  { id: 6, client: "Dior", title: "AETHER_DRESS", year: "2024", type: "image", url: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800", slug: "kinetic-silk" },
+  { id: 7, client: "Celine", title: "LE_NOIR", year: "2023", type: "image", url: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800", slug: "structural-noir" },
+  { id: 8, client: "Cartier", title: "LUX_ECHO", year: "2023", type: "image", url: "https://images.unsplash.com/photo-1537832816519-689ad163238b?auto=format&fit=crop&w=800", slug: "atelier-chrome" },
 ];
 
 export default function WorkPage() {
@@ -52,8 +52,9 @@ export default function WorkPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
               {projects.map((project, i) => (
-                  <div 
+                  <Link 
                       key={project.id} 
+                      href={`/work/${project.slug}`}
                       className={`group flex flex-col cursor-pointer ${i % 2 !== 0 ? 'md:mt-48' : ''}`}
                       data-cursor="view"
                   >
@@ -80,7 +81,7 @@ export default function WorkPage() {
                           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                               <MagneticButton>
                                   <div className="w-24 h-24 rounded-full border border-white flex items-center justify-center font-sans text-[10px] uppercase tracking-widest backdrop-blur-sm bg-black/10">
-                                      Play
+                                      View
                                   </div>
                               </MagneticButton>
                           </div>
@@ -97,7 +98,7 @@ export default function WorkPage() {
                           </div>
                           <span className="font-sans text-xs opacity-30">{project.year}</span>
                       </div>
-                  </div>
+                  </Link>
               ))}
           </div>
       </section>
