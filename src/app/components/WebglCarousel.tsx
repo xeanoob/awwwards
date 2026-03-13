@@ -8,11 +8,11 @@ import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
-  { id: 1, title: 'Summer Collection', client: 'Céline', imgUrl: 'https://images.unsplash.com/photo-1704208316515-a32f81e373ef?auto=format&fit=crop&w=800&q=80' },
-  { id: 2, title: 'Winter Noir', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1601597565151-70c4020dc0e1?auto=format&fit=crop&w=800&q=80' },
-  { id: 3, title: 'Avant-Garde', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1586079615844-c0abfb04dc79?auto=format&fit=crop&w=800&q=80' },
-  { id: 4, title: 'Velocity', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80' },
-  { id: 5, title: 'High Editorial', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1603189343302-e603f7add05a?auto=format&fit=crop&w=800&q=80' },
+  { id: 1, title: 'KINETIC_SILK', client: 'OFFTIME SS25', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200' },
+  { id: 2, title: 'STRUCTURAL_NOIR', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200' },
+  { id: 3, title: 'ATELIER_CHROME', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200' },
+  { id: 4, title: 'STRETCH_GRAIN', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200' },
+  { id: 5, title: 'THE_COUTURE_VOID', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1520006403909-838d6b92c22e?auto=format&fit=crop&w=1200' },
 ];
 
 function VideoCard({ project, index, total, radius, onClick }: any) {
@@ -61,7 +61,7 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         onClick={(e) => { e.stopPropagation(); onClick(); }}
         position={[0, 0, 0]}
       >
-        <planeGeometry args={[3.2, 4.8]} />
+        <planeGeometry args={[3.5, 5]} />
         <meshBasicMaterial map={texture} color={hovered ? "white" : "#888"} transparent opacity={hovered ? 1 : 0.8} />
       </mesh>
       
