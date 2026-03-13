@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import WebGLImageTrail from '../components/WebGLImageTrail';
 import MagneticButton from '../components/MagneticButton';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Extended list of authentic fashion projects
 const projects = [
