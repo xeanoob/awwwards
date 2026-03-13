@@ -23,7 +23,7 @@ export default function Philosophy() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-40 grayscale"
-          src="/videos/video5.mp4"
+          src="https://assets.mixkit.co/videos/52055/52055-720.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80" />
       </div>
@@ -37,13 +37,13 @@ export default function Philosophy() {
             Core Philosophy
         </span>
         <h2 className="font-serif text-5xl md:text-[8vw] leading-[0.9] tracking-tighter text-white/90">
-          Digital Art.
+          Tailoring.
           <br />
-          <span className="italic">The Illusion of Time.</span>
+          <span className="italic">The Moving Image.</span>
         </h2>
         <div className="mt-12 md:mt-20 flex justify-end">
             <p className="max-w-md font-sans text-sm md:text-base text-white/50 leading-relaxed text-right italic">
-                “We don&apos;t just capture moments; we sculpt them. Every frame is a decision to bend the reality you thought you knew.”
+                “We don&apos;t just film fashion; we weave narratives. Every stitch of light is a decision to redefine the silhouette of reality.”
             </p>
         </div>
       </motion.div>

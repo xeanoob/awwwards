@@ -1,11 +1,11 @@
 'use client';
 
 const services = [
-  "Creative Direction",
-  "Film Production",
-  "Sound Design",
-  "WebGL & 3D Experiences",
-  "Immersive Digital Platforms"
+  "Editorial Production",
+  "Campaign Direction",
+  "Fashion Film",
+  "Runway Documentation",
+  "High-End Cinematography"
 ];
 
 export default function Expertise() {
@@ -13,8 +13,8 @@ export default function Expertise() {
     <section className="relative py-32 md:py-48 px-8 md:px-16 bg-[#050505] text-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-32">
         <div className="w-full md:w-1/3">
-          <h2 className="font-sans text-xs tracking-[0.3em] uppercase opacity-50 mb-8">Our Expertise</h2>
-          <p className="font-serif text-3xl md:text-5xl italic leading-tight">A holistic approach to visual storytelling.</p>
+          <h2 className="font-sans text-xs tracking-[0.3em] uppercase opacity-50 mb-8">Our Focus</h2>
+          <p className="font-serif text-3xl md:text-5xl italic leading-tight">Elevating fashion through technical precision.</p>
         </div>
         
         <div className="w-full md:w-2/3 flex flex-col gap-4 md:gap-8">

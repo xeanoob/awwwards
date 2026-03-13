@@ -8,11 +8,11 @@ import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
-  { id: 1, title: 'Lumina', client: 'Fashion House', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, title: 'Echoes', client: 'Automotive', imgUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800' },
-  { id: 3, title: 'Aether', client: 'Fragrance', imgUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, title: 'Velocity', client: 'Sportswear', imgUrl: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800' },
-  { id: 5, title: 'Noir', client: 'Editorial', imgUrl: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&q=80&w=800' },
+  { id: 1, title: 'Summer Collection', client: 'Céline', imgUrl: 'https://images.unsplash.com/photo-1620712943543-bcc462824100?q=80&w=800' },
+  { id: 2, title: 'Winter Noir', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1616422285623-13ff0167c95c?q=80&w=800' },
+  { id: 3, title: 'Avant-Garde', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?q=80&w=800' },
+  { id: 4, title: 'Velocity', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1610398041455-acc134954477?q=80&w=800' },
+  { id: 5, title: 'High Editorial', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800' },
 ];
 
 function VideoCard({ project, index, total, radius, onClick }: any) {

@@ -26,7 +26,7 @@ export default function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-60"
-          src="/videos/video1.mp4"
+          src="https://assets.mixkit.co/videos/50641/50641-720.mp4"
         />
         <div className="absolute inset-0 bg-black/40" />
       </motion.div>
@@ -40,12 +40,12 @@ export default function Hero() {
           className="max-w-4xl"
         >
           <h1 className="font-serif text-6xl md:text-[8vw] leading-[0.85] tracking-tighter mb-8 text-white">
-            Visual Storytelling.
+            Couture.
             <br />
-            <span className="italic">Elevated.</span>
+            <span className="italic">In Motion.</span>
           </h1>
           <p className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-white/70">
-            Manipulating perception since 1820.
+            The Art of the Cut. The Soul of the Frame.
           </p>
         </motion.div>
 
