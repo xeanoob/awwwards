@@ -32,7 +32,7 @@ export default function CinematographyPage() {
       {/* Cinematic Main image */}
       <section className="w-full h-[70vh] md:h-screen bg-[#0A0A0A] overflow-hidden group relative">
         <Image 
-          src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1920&q=90" 
+          src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1920&q=90" 
           alt="Cinema Main" 
           fill
           className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 group-hover:opacity-90 transition-all duration-[3s] ease-out"

@@ -6,6 +6,7 @@ import MagneticButton from './MagneticButton';
 import MenuOverlay from './MenuOverlay';
 import { useSound } from './SoundProvider';
 import LiquidLogo from './LiquidLogo';
+import Link from 'next/link';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +21,9 @@ export default function Nav() {
         className="fixed top-0 left-0 w-full z-[90] flex justify-between items-center px-8 md:px-16 py-10 mix-blend-difference text-white pointer-events-none"
       >
         <MagneticButton className="pointer-events-auto">
-           <LiquidLogo />
+           <Link href="/" className="cursor-pointer" onClick={playClick}>
+              <LiquidLogo />
+           </Link>
         </MagneticButton>
         
         <div className="pointer-events-auto">

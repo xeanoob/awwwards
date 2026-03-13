@@ -30,8 +30,8 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-60"
-          src="https://assets.mixkit.co/videos/50641/50641-720.mp4"
+          className="w-full h-full object-cover opacity-60 grayscale brightness-75 transition-opacity duration-1000"
+          src="https://assets.mixkit.co/videos/51633/51633-720.mp4"
         />
         <div className="absolute inset-0 bg-black/40" />
       </motion.div>

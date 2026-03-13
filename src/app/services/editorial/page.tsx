@@ -33,7 +33,7 @@ export default function EditorialPage() {
       <section className="w-full h-[70vh] md:h-screen bg-[#0A0A0A] overflow-hidden group relative">
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
         <Image 
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=90" 
+          src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1920&q=90" 
           alt="Editorial Main" 
           fill
           className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 group-hover:opacity-90 transition-all duration-[3s] ease-out"
@@ -48,7 +48,7 @@ export default function EditorialPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
               <div className="md:col-span-7 aspect-[4/5] bg-[#111] overflow-hidden">
                    <Image 
-                    src="https://images.unsplash.com/photo-1534126416832-a88fdf2911c2?auto=format&fit=crop&w=1200" 
+                    src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200" 
                     alt="Process 01" 
                     width={800} height={1000} className="w-full h-full object-cover grayscale opacity-40 hover:opacity-100 transition-opacity duration-1000"
                    />

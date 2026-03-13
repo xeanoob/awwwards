@@ -23,7 +23,7 @@ export default function Philosophy() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-40 grayscale"
-          src="https://assets.mixkit.co/videos/52055/52055-720.mp4"
+          src="https://assets.mixkit.co/videos/51635/51635-720.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80" />
       </div>

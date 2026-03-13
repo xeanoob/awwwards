@@ -33,7 +33,7 @@ export default function CampaignsPage() {
       <section className="w-full h-[70vh] md:h-screen bg-[#0A0A0A] overflow-hidden group relative">
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
         <Image 
-          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1920&q=90" 
+          src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1920&q=90" 
           alt="Campaign Main" 
           fill
           className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 group-hover:opacity-90 transition-all duration-[3s] ease-out"
