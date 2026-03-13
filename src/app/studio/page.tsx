@@ -1,6 +1,7 @@
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function StudioPage() {
   return (
@@ -48,13 +49,13 @@ export default function StudioPage() {
           <h2 className="font-serif text-3xl md:text-5xl italic mb-8">&quot;We control the horizontal.<br/>We control the vertical.&quot;</h2>
           <p className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-40 italic mb-12">OffTime Internal Manifesto</p>
           
-          <a 
+          <Link 
             href="/work" 
             className="inline-block font-sans text-xs tracking-[0.4em] uppercase border border-white/10 px-12 py-6 rounded-full hover:border-white/50 transition-all duration-500"
             data-cursor="view"
           >
             BROWSE_ARCHIVE
-          </a>
+          </Link>
       </section>
 
       <Footer />

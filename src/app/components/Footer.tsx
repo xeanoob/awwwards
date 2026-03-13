@@ -16,7 +16,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="hidden md:flex flex-col items-end gap-2 text-[10px] uppercase tracking-widest font-sans font-medium">
-          <a href="mailto:hello@offtime.studio" className="hover:opacity-50 transition-opacity" data-cursor="view" onClick={playClick}>hello@offtime.studio</a>
+          <a href="mailto:boutrinambroise@gmail.com" className="hover:opacity-50 transition-opacity" data-cursor="view" onClick={playClick}>boutrinambroise@gmail.com</a>
           <a href="tel:+33100000000" className="hover:opacity-50 transition-opacity" data-cursor="view" onClick={playClick}>+33 1 00 00 00 00</a>
         </div>
       </div>
@@ -27,9 +27,9 @@ export default function Footer() {
         </div>
         
         <div className="flex gap-8 font-sans text-[10px] uppercase tracking-[0.3em] font-medium opacity-60 mt-8 md:mt-0">
-          <a href="#" className="hover:opacity-100 transition-opacity" onClick={playClick}>Instagram</a>
-          <a href="#" className="hover:opacity-100 transition-opacity" onClick={playClick}>Vimeo</a>
-          <a href="#" className="hover:opacity-100 transition-opacity" onClick={playClick}>LinkedIn</a>
+          <a href="http://instagram.com/ambroise.45" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity" onClick={playClick}>Instagram</a>
+          <a href="https://vsco.co/ambroise222/gallery" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity" onClick={playClick}>VSCO</a>
+          <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity" onClick={playClick}>LinkedIn</a>
         </div>
       </div>
       

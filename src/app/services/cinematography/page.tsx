@@ -20,11 +20,11 @@ export default function CinematographyPage() {
             At OffTime, cinematography is the surgical application of optics. We capture the soul of the sensor with technical perfection.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-[10px] tracking-[0.3em] uppercase opacity-40 mt-20 border-t border-white/10 pt-10">
-              <div>// ANAMORPHIC_LENSES</div>
-              <div>// 12-BIT_LOG_WORKFLOW</div>
-              <div>// MOTION_CONTROL_RIGS</div>
-              <div>// VIRTUAL_PRODUCTION</div>
-              <div>// PIXEL_LEVEL_GRADING</div>
+              <div>{'// ANAMORPHIC_LENSES'}</div>
+              <div>{'// 12-BIT_LOG_WORKFLOW'}</div>
+              <div>{'// MOTION_CONTROL_RIGS'}</div>
+              <div>{'// VIRTUAL_PRODUCTION'}</div>
+              <div>{'// PIXEL_LEVEL_GRADING'}</div>
           </div>
         </div>
       </section>

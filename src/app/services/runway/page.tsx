@@ -20,11 +20,11 @@ export default function RunwayPage() {
             Runway documentation is the archival capture of the ephemeral. At OffTime, we document the split-second tension of the walk.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-[10px] tracking-[0.3em] uppercase opacity-40 mt-20 border-t border-white/10 pt-10">
-              <div>// MULTI_ANGLE_COVERAGE</div>
-              <div>// LIVE_REVERSE_FEEDS</div>
-              <div>// HIGH_SPEED_STUDIES</div>
-              <div>// MACRO_FABRIC_PULLS</div>
-              <div>// RAPID_POST_EDITS</div>
+              <div>{'// MULTI_ANGLE_COVERAGE'}</div>
+              <div>{'// LIVE_REVERSE_FEEDS'}</div>
+              <div>{'// HIGH_SPEED_STUDIES'}</div>
+              <div>{'// MACRO_FABRIC_PULLS'}</div>
+              <div>{'// RAPID_POST_EDITS'}</div>
           </div>
         </div>
       </section>

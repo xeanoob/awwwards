@@ -30,8 +30,8 @@ export default function ContactPage() {
                 </p>
 
                 <div className="flex gap-4 mb-20">
-                  <a href="mailto:hello@offtime.studio" className="border border-white/20 px-8 py-4 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors" data-cursor="view" onClick={playClick}>
-                      hello@offtime.studio
+                  <a href="mailto:boutrinambroise@gmail.com" className="border border-white/20 px-8 py-4 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors" data-cursor="view" onClick={playClick}>
+                      boutrinambroise@gmail.com
                   </a>
                 </div>
             </div>

@@ -20,11 +20,11 @@ export default function FilmPage() {
             Fashion film at OffTime is the surgical removal of the ordinary. We build worlds that exist only in the shutter&apos;s blink.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-[10px] tracking-[0.3em] uppercase opacity-40 mt-20 border-t border-white/10 pt-10">
-              <div>// RHYTHMIC_EDITING</div>
-              <div>// GLITCH_AESTHETICS</div>
-              <div>// ANAMORPHIC_VISION</div>
-              <div>// MACRO_STUDIES</div>
-              <div>// POST_GRAIN_MAPPING</div>
+              <div>{'// RHYTHMIC_EDITING'}</div>
+              <div>{'// GLITCH_AESTHETICS'}</div>
+              <div>{'// ANAMORPHIC_VISION'}</div>
+              <div>{'// MACRO_STUDIES'}</div>
+              <div>{'// POST_GRAIN_MAPPING'}</div>
           </div>
         </div>
       </section>

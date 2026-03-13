@@ -91,8 +91,8 @@ export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, t
             variants={linkVariants}
             className="absolute bottom-10 left-10 md:left-20 flex gap-10 font-sans text-[10px] tracking-[0.2em] uppercase opacity-50"
           >
-            <a href="#" className="hover:opacity-100 transition-opacity">Instagram</a>
-            <a href="#" className="hover:opacity-100 transition-opacity">Vimeo</a>
+            <a href="http://instagram.com/ambroise.45" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Instagram</a>
+            <a href="https://vsco.co/ambroise222/gallery" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">VSCO</a>
             <a href="/contact" className="hover:opacity-100 transition-opacity">Initiate Sequence</a>
           </motion.div>
         </motion.div>

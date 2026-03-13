@@ -20,11 +20,11 @@ export default function EditorialPage() {
             At OffTime, editorial production is more than layout. It is the architectural arrangement of light and shadow on a physical plane.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-[10px] tracking-[0.3em] uppercase opacity-40 mt-20 border-t border-white/10 pt-10">
-              <div>// 4K_ACQUISITION</div>
-              <div>// CUSTOM_GRAIN_MAPPING</div>
-              <div>// CHROME_OFFSET</div>
-              <div>// OPTICAL_DISTORTION</div>
-              <div>// KINETIC_REVEAL</div>
+              <div>{'// 4K_ACQUISITION'}</div>
+              <div>{'// CUSTOM_GRAIN_MAPPING'}</div>
+              <div>{'// CHROME_OFFSET'}</div>
+              <div>{'// OPTICAL_DISTORTION'}</div>
+              <div>{'// KINETIC_REVEAL'}</div>
           </div>
         </div>
       </section>
