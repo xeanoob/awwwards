@@ -2,6 +2,9 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
+import MagneticButton from './MagneticButton';
+import { useSound } from './SoundProvider';
 
 export default function Hero() {
   const ref = useRef(null);
@@ -9,6 +12,8 @@ export default function Hero() {
     target: ref,
     offset: ['start start', 'end start']
   });
+
+  const { playClick } = useSound();
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
@@ -49,15 +54,23 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* Play Button */}
+        {/* Browse Anomalies Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1.5 }}
-          className="hidden md:flex items-center justify-center w-32 h-32 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors duration-500 cursor-pointer absolute bottom-16 right-16"
-          data-cursor="view"
+          className="absolute bottom-16 right-16 hidden md:block"
         >
-          <span className="text-[10px] uppercase tracking-widest font-sans font-bold">Play Reel</span>
+          <MagneticButton type="attract" strength={0.3}>
+            <Link 
+              href="/work"
+              className="flex items-center justify-center w-32 h-32 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors duration-500 cursor-pointer"
+              data-cursor="view"
+              onClick={playClick}
+            >
+              <span className="text-[10px] uppercase tracking-widest font-sans font-bold text-center px-4 leading-tight">Browse Anomalies</span>
+            </Link>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>
