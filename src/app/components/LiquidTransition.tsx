@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const narrative = [
   "TIME IS A FLUID...",
@@ -16,8 +16,13 @@ export default function LiquidTransition() {
   const pathname = usePathname();
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [displayText, setDisplayText] = useState("");
+  const isFirstMount = useRef(true);
 
   useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
     setIsTransitioning(true);
     setDisplayText(narrative[Math.floor(Math.random() * narrative.length)]);
     const timer = setTimeout(() => setIsTransitioning(false), 2000);

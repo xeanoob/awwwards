@@ -58,7 +58,7 @@ export default function InfiniteTunnel() {
     { title: "FOCUS", img: "/images/about.jpg" },
     { title: "LIGHT", img: "/images/about.jpg" },
     { title: "TIME", img: "/images/about.jpg" },
-    { title: "1820", img: "/images/about.jpg" }
+    { title: "OFFSET", img: "/images/about.jpg" }
   ];
 
   return (
