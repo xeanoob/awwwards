@@ -23,7 +23,7 @@ export default function Philosophy() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-40 grayscale"
-          src="/videos/video2.mp4"
+          src="/videos/video5.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80" />
       </div>

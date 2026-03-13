@@ -3,20 +3,20 @@
 import * as THREE from 'three';
 import { useRef, useState, useMemo, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Text, useVideoTexture, Environment } from '@react-three/drei';
+import { Text, useVideoTexture, useTexture, Environment } from '@react-three/drei';
 import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
-  { id: 1, title: 'Lumina', client: 'Fashion House', videoUrl: '/videos/video1.mp4' },
-  { id: 2, title: 'Echoes', client: 'Automotive', videoUrl: '/videos/video2.mp4' },
-  { id: 3, title: 'Aether', client: 'Fragrance', videoUrl: '/videos/video3.mp4' },
-  { id: 4, title: 'Velocity', client: 'Sportswear', videoUrl: '/videos/video4.mp4' },
-  { id: 5, title: 'Noir', client: 'Editorial', videoUrl: '/videos/video5.mp4' },
+  { id: 1, title: 'Lumina', client: 'Fashion House', imgUrl: '/images/about.jpg' },
+  { id: 2, title: 'Echoes', client: 'Automotive', imgUrl: '/images/about.jpg' },
+  { id: 3, title: 'Aether', client: 'Fragrance', imgUrl: '/images/about.jpg' },
+  { id: 4, title: 'Velocity', client: 'Sportswear', imgUrl: '/images/about.jpg' },
+  { id: 5, title: 'Noir', client: 'Editorial', imgUrl: '/images/about.jpg' },
 ];
 
 function VideoCard({ project, index, total, radius, onClick }: any) {
-  const texture = useVideoTexture(project.videoUrl, { crossOrigin: 'Anonymous' });
+  const texture = useTexture(project.imgUrl);
   const [hovered, setHover] = useState(false);
   const meshRef = useRef<THREE.Mesh>(null);
   const { playClick } = useSound();
@@ -49,14 +49,13 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         position={[0, 0, 0]}
       >
         <planeGeometry args={[4.8, 2.7]} />
-        <DistortionMaterial texture={texture} hovered={hovered} />
+        <meshBasicMaterial map={texture} color={hovered ? "white" : "#888"} />
       </mesh>
       
       {/* Project Title */}
       <Text 
         position={[0, -1.8, 0.1]} 
         fontSize={0.4} 
-        font="/fonts/PlayfairDisplay-Italic.ttf" // Assuming we have or just use default
         color="#ffffff" 
         anchorX="center"
         fillOpacity={hovered ? 1 : 0.5}
