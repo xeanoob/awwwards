@@ -51,7 +51,7 @@ export default function BehindTheScenesGallery() {
               />
               <div className="absolute bottom-10 flex w-full justify-between items-end px-10 mix-blend-difference pointer-events-none">
                 <span className="font-sans text-xs tracking-[0.2em] text-white uppercase opacity-70">{item.title}</span>
-                <span className="font-serif text-4xl text-white italic">{(index + 1).toString().padStart(2, '0')}</span>
+                <span className="font-serif text-4xl text-white italic">{(i + 1).toString().padStart(2, '0')}</span>
               </div>
             </div>
           ))}
