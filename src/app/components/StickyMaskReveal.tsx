@@ -22,11 +22,11 @@ export default function StickyMaskReveal() {
         
         {/* Background text that gets revealed */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 px-8 text-center">
-            <h2 className="font-serif text-6xl md:text-[8vw] leading-[0.85] tracking-tighter italic text-white/90">
-                Time is a Construct.
+            <h2 className="font-serif text-6xl md:text-[8vw] leading-[0.85] tracking-tighter italic text-white/90 uppercase">
+                Liquid Architecture.
             </h2>
-            <p className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-white/50 mt-8">
-                We design the reality you perceive.
+            <p className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-white/40 mt-12 max-w-md">
+                Manipulating the boundaries of digital experience.
             </p>
         </div>
 
@@ -39,11 +39,11 @@ export default function StickyMaskReveal() {
                 clipPath: `circle(${maskSize.get()}vw at center center)`,
             }}
         >
-            <h2 className="font-serif text-6xl md:text-[8vw] leading-[0.85] tracking-tighter italic text-black/90 mix-blend-difference">
-                Reality is Malleable.
+            <h2 className="font-serif text-6xl md:text-[8vw] leading-[0.85] tracking-tighter italic text-black/90 mix-blend-difference uppercase">
+                Beyond Boundaries.
             </h2>
-             <p className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-black/50 mt-8 mix-blend-difference">
-                Scroll to manipulate perception
+             <p className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-black/40 mt-12 mix-blend-difference max-w-md">
+                Scroll to distort reality.
             </p>
         </motion.div>
 
