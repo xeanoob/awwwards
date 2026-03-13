@@ -8,11 +8,11 @@ import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
-  { id: 1, title: 'KINETIC_SILK', client: 'OFFTIME SS25', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200' },
-  { id: 2, title: 'STRUCTURAL_NOIR', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200' },
-  { id: 3, title: 'ATELIER_CHROME', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200' },
-  { id: 4, title: 'STRETCH_GRAIN', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200' },
-  { id: 5, title: 'THE_COUTURE_VOID', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1520006403909-838d6b92c22e?auto=format&fit=crop&w=1200' },
+  { id: 1, title: 'KINETIC_SILK', client: 'OFFTIME SS25', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1600' },
+  { id: 2, title: 'STRUCTURAL_NOIR', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600' },
+  { id: 3, title: 'ATELIER_CHROME', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600' },
+  { id: 4, title: 'STRETCH_GRAIN', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1540331547168-8b63109225b7?auto=format&fit=crop&w=1600' },
+  { id: 5, title: 'THE_COUTURE_VOID', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600' },
 ];
 
 function VideoCard({ project, index, total, radius, onClick }: any) {
@@ -61,13 +61,13 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         onClick={(e) => { e.stopPropagation(); onClick(); }}
         position={[0, 0, 0]}
       >
-        <planeGeometry args={[3.5, 5]} />
+        <planeGeometry args={[4, 5.5]} />
         <meshBasicMaterial map={texture} color={hovered ? "white" : "#888"} transparent opacity={hovered ? 1 : 0.8} />
       </mesh>
       
       {/* Project Title */}
       <Text 
-        position={[0, -2.8, 0.1]} 
+        position={[0, -3.2, 0.1]} 
         fontSize={0.4} 
         color="#ffffff" 
         anchorX="center"
@@ -76,7 +76,7 @@ function VideoCard({ project, index, total, radius, onClick }: any) {
         {project.title}
       </Text>
       <Text 
-        position={[0, -3.2, 0.1]} 
+        position={[0, -3.6, 0.1]} 
         fontSize={0.12} 
         color="#ffffff" 
         anchorX="center"
@@ -209,7 +209,7 @@ export default function WebglCarousel({ onProjectClick }: { onProjectClick?: (id
           </h2>
       </div>
 
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+      <Canvas camera={{ position: [0, 0, 16], fov: 45 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <Suspense fallback={null}>
