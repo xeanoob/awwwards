@@ -1,11 +1,13 @@
 'use client';
 
+import Link from 'next/link';
+
 const services = [
-  "Editorial Production",
-  "Campaign Direction",
-  "Fashion Film",
-  "Runway Documentation",
-  "High-End Cinematography"
+  { name: "Editorial Production", href: "/services/editorial" },
+  { name: "Campaign Direction", href: "/services/campaigns" },
+  { name: "Fashion Film", href: "/services/film" },
+  { name: "Runway Documentation", href: "/services/runway" },
+  { name: "High-End Cinematography", href: "/services/cinematography" }
 ];
 
 export default function Expertise() {
@@ -19,10 +21,10 @@ export default function Expertise() {
         
         <div className="w-full md:w-2/3 flex flex-col gap-4 md:gap-8">
           {services.map((service, i) => (
-            <div key={i} className="group flex justify-between items-center border-b border-white/10 pb-6 md:pb-8 cursor-pointer" data-cursor="view">
-              <span className="font-serif text-3xl md:text-5xl tracking-tighter group-hover:italic transition-all duration-500">{service}</span>
+            <Link key={i} href={service.href} className="group flex justify-between items-center border-b border-white/10 pb-6 md:pb-8 cursor-pointer" data-cursor="view">
+              <span className="font-serif text-3xl md:text-5xl tracking-tighter group-hover:italic transition-all duration-500">{service.name}</span>
               <span className="font-sans text-[10px] md:text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore</span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
