@@ -12,26 +12,43 @@ const narrative = [
   "MEMORY FRAGMENT FOUND",
 ];
 
-export default function LiquidTransition() {
+interface LiquidTransitionProps {
+  isVisible?: boolean;
+  onComplete?: () => void;
+}
+
+export default function LiquidTransition({ isVisible, onComplete }: LiquidTransitionProps) {
   const pathname = usePathname();
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [internalTransitioning, setInternalTransitioning] = useState(false);
   const [displayText, setDisplayText] = useState("");
   const isFirstMount = useRef(true);
+
+  const active = isVisible !== undefined ? isVisible : internalTransitioning;
 
   useEffect(() => {
     if (isFirstMount.current) {
       isFirstMount.current = false;
       return;
     }
-    setIsTransitioning(true);
+    setInternalTransitioning(true);
     setDisplayText(narrative[Math.floor(Math.random() * narrative.length)]);
-    const timer = setTimeout(() => setIsTransitioning(false), 2000);
+    const timer = setTimeout(() => {
+      setInternalTransitioning(false);
+      onComplete?.();
+    }, 2000);
     return () => clearTimeout(timer);
   }, [pathname]);
 
+  // Handle text when manually triggered
+  useEffect(() => {
+    if (isVisible) {
+      setDisplayText(narrative[Math.floor(Math.random() * narrative.length)]);
+    }
+  }, [isVisible]);
+
   return (
     <AnimatePresence mode="wait">
-      {isTransitioning && (
+      {active && (
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

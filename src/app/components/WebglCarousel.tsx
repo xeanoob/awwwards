@@ -178,7 +178,11 @@ function PostProcessingEffect({ velocityRef }: any) {
     return null;
 }
 
-export default function WebglCarousel() {
+interface WebglCarouselProps {
+  onProjectClick?: () => void;
+}
+
+export default function WebglCarousel({ onProjectClick }: WebglCarouselProps) {
   const router = useRouter();
   const velocityRef = useRef(0);
   const isDragging = useRef(false);
@@ -186,6 +190,7 @@ export default function WebglCarousel() {
   const { playHeartbeat } = useSound();
 
   const handleProjectClick = (id: number) => {
+    onProjectClick?.();
     const project = projects.find(p => p.id === id);
     if (project?.slug) {
       router.push(`/work/${project.slug}`);

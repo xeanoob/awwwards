@@ -2,7 +2,8 @@ import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import Image from 'next/image';
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   // Map slugs to display data
   const projectData: any = {
     'kinetic-silk': {
@@ -51,7 +52,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     }
   };
 
-  const project = projectData[params.slug] || projectData['kinetic-silk'];
+  const project = projectData[slug] || projectData['kinetic-silk'];
 
   return (
     <main className="bg-black text-[#F5F5F5] min-h-screen">
