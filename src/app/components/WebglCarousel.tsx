@@ -11,7 +11,7 @@ const projects = [
   { id: 1, title: 'KINETIC_SILK', client: 'OFFTIME SS25', imgUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1600' },
   { id: 2, title: 'STRUCTURAL_NOIR', client: 'Saint Laurent', imgUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600' },
   { id: 3, title: 'ATELIER_CHROME', client: 'Rick Owens', imgUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600' },
-  { id: 4, title: 'STRETCH_GRAIN', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1540331547168-8b63109225b7?auto=format&fit=crop&w=1600' },
+  { id: 4, title: 'STRETCH_GRAIN', client: 'Nike Lab', imgUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600' },
   { id: 5, title: 'THE_COUTURE_VOID', client: 'Vogue France', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600' },
 ];
 

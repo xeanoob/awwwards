@@ -46,7 +46,15 @@ export default function StudioPage() {
       {/* Philosophy Addendum */}
       <section className="py-32 px-8 md:px-16 text-center max-w-4xl mx-auto flex flex-col items-center">
           <h2 className="font-serif text-3xl md:text-5xl italic mb-8">&quot;We control the horizontal.<br/>We control the vertical.&quot;</h2>
-          <p className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-40">OffTime Internal Manifesto</p>
+          <p className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-40 italic mb-12">OffTime Internal Manifesto</p>
+          
+          <a 
+            href="/work" 
+            className="inline-block font-sans text-xs tracking-[0.4em] uppercase border border-white/10 px-12 py-6 rounded-full hover:border-white/50 transition-all duration-500"
+            data-cursor="view"
+          >
+            BROWSE_ARCHIVE
+          </a>
       </section>
 
       <Footer />

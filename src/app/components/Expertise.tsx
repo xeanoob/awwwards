@@ -26,6 +26,17 @@ export default function Expertise() {
           ))}
         </div>
       </div>
+
+      <div className="mt-24 md:mt-32 flex justify-center md:justify-end max-w-7xl mx-auto px-8">
+          <a 
+            href="/contact" 
+            className="group flex items-center gap-6 font-sans text-xs tracking-[0.4em] uppercase opacity-50 hover:opacity-100 transition-all duration-500"
+            data-cursor="view"
+          >
+            <span>[ BOOK_A_SESSION ]</span>
+            <div className="w-12 h-[1px] bg-white transform origin-left scale-x-50 group-hover:scale-x-100 transition-transform duration-500" />
+          </a>
+      </div>
     </section>
   );
 }

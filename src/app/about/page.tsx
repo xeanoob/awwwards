@@ -62,6 +62,17 @@ export default function AboutPage() {
           </div>
       </section>
 
+      <section className="py-32 px-8 md:px-16 border-t border-white/10 text-center">
+          <h3 className="font-serif text-3xl md:text-5xl italic mb-12">Ready to distort your projection?</h3>
+          <a 
+            href="/contact" 
+            className="inline-block font-sans text-xs tracking-[0.4em] uppercase border border-white/20 px-12 py-6 rounded-full hover:bg-white hover:text-black transition-all duration-500"
+            data-cursor="view"
+          >
+            INQUIRE_SEQUENCE
+          </a>
+      </section>
+
       <Footer />
     </main>
   );
