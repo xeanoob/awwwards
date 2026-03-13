@@ -8,11 +8,11 @@ import { useSound } from './SoundProvider';
 import { DistortionMaterial } from './DistortionMaterial';
 
 const projects = [
-  { id: 1, title: 'Lumina', client: 'Fashion House', imgUrl: '/images/about.jpg' },
-  { id: 2, title: 'Echoes', client: 'Automotive', imgUrl: '/images/about.jpg' },
-  { id: 3, title: 'Aether', client: 'Fragrance', imgUrl: '/images/about.jpg' },
-  { id: 4, title: 'Velocity', client: 'Sportswear', imgUrl: '/images/about.jpg' },
-  { id: 5, title: 'Noir', client: 'Editorial', imgUrl: '/images/about.jpg' },
+  { id: 1, title: 'Lumina', client: 'Fashion House', imgUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800' },
+  { id: 2, title: 'Echoes', client: 'Automotive', imgUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800' },
+  { id: 3, title: 'Aether', client: 'Fragrance', imgUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800' },
+  { id: 4, title: 'Velocity', client: 'Sportswear', imgUrl: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800' },
+  { id: 5, title: 'Noir', client: 'Editorial', imgUrl: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&q=80&w=800' },
 ];
 
 function VideoCard({ project, index, total, radius, onClick }: any) {
