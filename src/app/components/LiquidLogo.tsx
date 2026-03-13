@@ -50,7 +50,7 @@ function LogoMesh({ playClick }: { playClick: () => void }) {
 
   const texture = useMemo(() => {
     const canvas = document.createElement('canvas');
-    canvas.width = 512;
+    canvas.width = 1024;
     canvas.height = 256;
     const ctx = canvas.getContext('2d');
     if (ctx) {
@@ -59,7 +59,7 @@ function LogoMesh({ playClick }: { playClick: () => void }) {
         ctx.fillStyle = 'white';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('OFFTIME', 256, 128);
+        ctx.fillText('OFFTIME', 512, 128);
     }
     const tex = new THREE.CanvasTexture(canvas);
     // Needs linear filtering to not look pixelated
@@ -90,7 +90,7 @@ function LogoMesh({ playClick }: { playClick: () => void }) {
       onPointerOut={() => { setHover(false); document.body.style.cursor = 'auto'; }}
       onClick={playClick}
     >
-      <planeGeometry args={[4, 2]} />
+      <planeGeometry args={[8, 2]} />
       <shaderMaterial 
         ref={materialRef}
         vertexShader={vertexShader}
@@ -106,8 +106,8 @@ export default function LiquidLogo() {
   const { playClick } = useSound();
 
   return (
-    <div className="w-[180px] h-[75px] md:w-[240px] md:h-[100px] relative z-[100]">
-      <Canvas camera={{ position: [0, 0, 2], fov: 45 }} className="w-full h-full pointer-events-auto">
+    <div className="w-[200px] h-[50px] md:w-[320px] md:h-[80px] relative z-[100]">
+      <Canvas camera={{ position: [0, 0, 4], fov: 45 }} className="w-full h-full pointer-events-auto">
         <LogoMesh playClick={playClick} />
       </Canvas>
     </div>
