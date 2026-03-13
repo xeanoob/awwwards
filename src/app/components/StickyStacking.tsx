@@ -8,19 +8,19 @@ const features = [
     id: '01',
     title: 'Direction',
     desc: 'Translating brand essence into visual poetry. We lead every frame with intent.',
-    img: '/videos/video2.mp4', // Reusing a video as a background for the section
+    img: 'https://assets.mixkit.co/videos/51281/51281-720.mp4',
   },
   {
     id: '02',
     title: 'Cinematography',
     desc: 'Chasing light and shadow. Our lens captures the unspoken truth of the moment.',
-    img: '/videos/video3.mp4',
+    img: 'https://assets.mixkit.co/videos/47779/47779-720.mp4',
   },
   {
     id: '03',
     title: 'Post-Production',
     desc: 'The final polish. Grading, editing, and sound design that elevate the narrative.',
-    img: '/videos/video4.mp4',
+    img: 'https://assets.mixkit.co/videos/809/809-720.mp4',
   }
 ];
 

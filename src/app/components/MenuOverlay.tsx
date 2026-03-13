@@ -7,11 +7,11 @@ import Image from 'next/image';
 import { useSound } from './SoundProvider';
 
 const links = [
-  { name: 'HOME', href: '/', img: '/videos/video1.mp4', isVideo: true },
-  { name: 'WORK', href: '/work', img: '/images/gallery1.jpg' },
-  { name: 'STUDIO', href: '/studio', img: '/videos/video3.mp4', isVideo: true },
-  { name: 'ABOUT', href: '/about', img: '/images/about.jpg' },
-  { name: 'CONTACT', href: '/contact', img: '/videos/video2.mp4', isVideo: true },
+  { name: 'HOME', href: '/', img: 'https://assets.mixkit.co/videos/809/809-720.mp4', isVideo: true },
+  { name: 'WORK', href: '/work', img: 'https://assets.mixkit.co/videos/52270/52270-720.mp4', isVideo: true },
+  { name: 'STUDIO', href: '/studio', img: 'https://assets.mixkit.co/videos/23327/23327-720.mp4', isVideo: true },
+  { name: 'ABOUT', href: '/about', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800', isVideo: false },
+  { name: 'CONTACT', href: '/contact', img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800', isVideo: false },
 ];
 
 export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, toggleMenu: () => void }) {
@@ -71,18 +71,16 @@ export default function MenuOverlay({ isOpen, toggleMenu }: { isOpen: boolean, t
                 onMouseEnter={() => { setHoveredLink(i); playClick(); }} 
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                <Link href={link.href} passHref legacyBehavior>
-                  <motion.a
-                    variants={linkVariants}
-                    className="block font-serif text-[12vw] md:text-[8vw] leading-[0.85] tracking-tighter text-white hover:italic transition-all duration-500 cursor-pointer"
-                    style={{  
-                      WebkitTextStroke: hoveredLink === i ? 'none' : '1px rgba(255,255,255,0.3)',
-                      color: hoveredLink === i ? 'white' : 'transparent',
-                    }}
-                    onClick={() => { playClick(); toggleMenu(); }}
-                  >
+                <Link href={link.href} className="block font-serif text-[12vw] md:text-[8vw] leading-[0.85] tracking-tighter text-white hover:italic transition-all duration-500 cursor-pointer"
+                  style={{  
+                    WebkitTextStroke: hoveredLink === i ? 'none' : '1px rgba(255,255,255,0.3)',
+                    color: hoveredLink === i ? 'white' : 'transparent',
+                  }}
+                  onClick={() => { playClick(); toggleMenu(); }}
+                >
+                  <motion.span variants={linkVariants} className="block">
                     {link.name}
-                  </motion.a>
+                  </motion.span>
                 </Link>
               </div>
             ))}

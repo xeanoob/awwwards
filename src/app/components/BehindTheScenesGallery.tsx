@@ -5,10 +5,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 const images = [
-  '/images/about.jpg',
-  '/images/about.jpg',
-  '/images/about.jpg',
-  '/images/about.jpg',
+  'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800',
+  'https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?q=80&w=800',
+  'https://images.unsplash.com/photo-1621605815841-28d645d0232e?q=80&w=800',
+  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800',
+  'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800',
+  'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800',
 ];
 
 export default function BehindTheScenesGallery() {
@@ -18,7 +20,7 @@ export default function BehindTheScenesGallery() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']); // -75% because 4 images of 100vw = 400vw. We stop at the last one.
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']); 
 
   return (
     <section ref={targetRef} className="relative h-[400vh] bg-black">
